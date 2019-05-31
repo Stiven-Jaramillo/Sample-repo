@@ -1,6 +1,2 @@
-import math
-import sys
-from os import rename
-
-print("name")
-
+a = input()
+print(a)
