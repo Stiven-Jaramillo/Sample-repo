@@ -1,1 +1,2 @@
-import pylab
+a = 2 * 2
+b = a * 100
