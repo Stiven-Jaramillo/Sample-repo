@@ -1,29 +1,44 @@
 import face_recognition
 from PIL import Image, ImageDraw
 
-image_of_bill = face_recognition.load_image_file(
-    "./face_recognition/img/known/Bill Gates.jpg"
+image_of_jona = face_recognition.load_image_file(
+    "./face_recognition/img/known/Jona Kahnwald.png"
 )
-bill_face_encoding = face_recognition.face_encodings(image_of_bill)[0]
+jona_face_encoding = face_recognition.face_encodings(image_of_jona)[0]
 
-image_of_steve = face_recognition.load_image_file(
-    "./face_recognition/img/known/Steve Jobs.jpg"
+image_of_hannah = face_recognition.load_image_file(
+    "./face_recognition/img/known/Hannah Kahnwald.png"
 )
-steve_face_encoding = face_recognition.face_encodings(image_of_steve)[0]
+hannah_face_encoding = face_recognition.face_encodings(image_of_hannah)[0]
 
-image_of_elon = face_recognition.load_image_file(
-    "./face_recognition/img/known/Elon Musk.jpg"
+image_of_katharina = face_recognition.load_image_file(
+    "./face_recognition/img/known/Katharina Nielsen.png"
 )
-elon_face_encoding = face_recognition.face_encodings(image_of_elon)[0]
+katharina_face_encoding = face_recognition.face_encodings(image_of_katharina)[0]
+
+image_of_mark = face_recognition.load_image_file(
+    "./face_recognition/img/known/Mark Waschke.jpg"
+)
+mark_face_encoding = face_recognition.face_encodings(image_of_mark)[0]
 
 #  Create arrays of encodings and names
-known_face_encodings = [bill_face_encoding, steve_face_encoding, elon_face_encoding]
+known_face_encodings = [
+    jona_face_encoding,
+    hannah_face_encoding,
+    katharina_face_encoding,
+    mark_face_encoding,
+]
 
-known_face_names = ["Bill Gates", "Steve Jobs", "Elon Musk"]
+known_face_names = [
+    "Jona Kahnwald",
+    "Hannah Kahnwald",
+    "Katharina Nielsen",
+    "Mark Waschke",
+]
 
 # Load test image to find faces in
 test_image = face_recognition.load_image_file(
-    "./face_recognition/img/groups/bill-steve-elon.jpg"
+    "./face_recognition/img/groups/darl_cast.png"
 )
 
 # Find faces in test image
