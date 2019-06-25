@@ -1,5 +1,5 @@
 import face_recognition
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 
 image_of_jona = face_recognition.load_image_file(
     "./face_recognition/img/known/Jona Kahnwald.png"
@@ -46,6 +46,9 @@ pil_image = Image.fromarray(test_image)
 # Create a ImageDraw instance
 draw = ImageDraw.Draw(pil_image)
 
+# Change the font size with ImageFont
+font = ImageFont.truetype("BAUHS93.TTF", 37)
+
 # Loop through faces in test image
 for (top, right, bottom, left), face_encoding in zip(face_locations, face_encodings):
     matches = face_recognition.compare_faces(known_face_encodings, face_encoding)
@@ -67,7 +70,7 @@ for (top, right, bottom, left), face_encoding in zip(face_locations, face_encodi
         fill=(255, 255, 0),
         outline=(255, 255, 0),
     )
-    draw.text((left + 6, bottom - text_height - 5), name, fill=(0, 0, 0))
+    draw.text((left + 70, bottom - text_height - 35), name, fill=(0, 0, 0), font=font)
 
 del draw
 
