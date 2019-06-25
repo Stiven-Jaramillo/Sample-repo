@@ -16,25 +16,20 @@ image_of_katharina = face_recognition.load_image_file(
 )
 katharina_face_encoding = face_recognition.face_encodings(image_of_katharina)[0]
 
-image_of_mark = face_recognition.load_image_file(
-    "./face_recognition/img/known/Mark Waschke.jpg"
+image_of_noah = face_recognition.load_image_file(
+    "./face_recognition/img/known/Noah.jpg"
 )
-mark_face_encoding = face_recognition.face_encodings(image_of_mark)[0]
+noah_face_encoding = face_recognition.face_encodings(image_of_noah)[0]
 
 #  Create arrays of encodings and names
 known_face_encodings = [
     jona_face_encoding,
     hannah_face_encoding,
     katharina_face_encoding,
-    mark_face_encoding,
+    noah_face_encoding,
 ]
 
-known_face_names = [
-    "Jona Kahnwald",
-    "Hannah Kahnwald",
-    "Katharina Nielsen",
-    "Mark Waschke",
-]
+known_face_names = ["Jona Kahnwald", "Hannah Kahnwald", "Katharina Nielsen", "Noah"]
 
 # Load test image to find faces in
 test_image = face_recognition.load_image_file(
