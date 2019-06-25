@@ -78,5 +78,5 @@ del draw
 pil_image.show()
 
 # Save image
-pil_image.save("identify.jpg")
+pil_image.save("face_recog_identified.jpg")
 
